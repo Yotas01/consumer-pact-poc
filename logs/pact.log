@@ -1,0 +1,39 @@
+I, [2023-07-17T15:13:24.352131 #2304]  INFO -- : Registered expected interaction POST /blogs
+D, [2023-07-17T15:13:24.353130 #2304] DEBUG -- : {
+  "description": "a POST to create a blog",
+  "providerState": "provider allows blog creation",
+  "request": {
+    "method": "POST",
+    "path": "/blogs",
+    "headers": {
+      "Accept": "application/json"
+    },
+    "body": {
+      "id": null,
+      "title": "Test title",
+      "content": "Test content",
+      "tags": [
+        "automated",
+        "test"
+      ]
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "id": {
+        "json_class": "Pact::SomethingLike",
+        "contents": "1e8c53db-509a-478e-a1db-25c62f6fd930"
+      },
+      "name": "Test title",
+      "content": "Test content",
+      "tags": [
+        "automated",
+        "test"
+      ]
+    }
+  }
+}

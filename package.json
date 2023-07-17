@@ -9,13 +9,22 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "axios": "0.18.0"
+  },
+  "devDependencies": {
+    "@babel/plugin-syntax-jsx": "^7.22.5",
+    "@pact-foundation/pact": "12.0.0",
+    "@pact-foundation/pact-node": "10.17.7",
+    "cross-env": "^5.2.0",
+    "jest": "^27.5.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "jest",
+    "eject": "react-scripts eject",
+    "test:pact": "cross-env CI=true react-scripts test --runInBand --setupFilesAfterEnv \"<rootDir>/src/pact/setup.js\" \"<rootDir>/src/pact/jest-wrapper.js\" --testMatch \"**/*.pact.test.js\""
   },
   "eslintConfig": {
     "extends": [
@@ -34,5 +43,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "type": "module"
 }
